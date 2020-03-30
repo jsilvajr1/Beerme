@@ -1,7 +1,7 @@
 import React from 'react';
 import {Media} from 'reactstrap';
 import '../../styles/profile.css';
-import PostModal from './PostModal';
+import PostModel from './PostModal';
 
 class ListProfilePosts extends React.Component{
 
@@ -24,7 +24,7 @@ class ListProfilePosts extends React.Component{
     renderModal = (post) => {
         let modal;
         if(this.state.modalShow[0] === true && this.state.modalShow[1] === post.id){
-            modal = <PostModal
+            modal = <PostModel
                 show={this.state.modalShow}
                 image={this.getUrl("/post_pictures/",post.image)}
                 id={post.id}
@@ -55,3 +55,5 @@ class ListProfilePosts extends React.Component{
 }
 
 }
+
+export default ListProfilePosts

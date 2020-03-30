@@ -24,7 +24,7 @@ refresh_user = () => {
     //check if a user is logged in
     
     if (this.state.is_logged_in && !this.state.username) {
-      fetch('http://localhost:8000/api/v1/instagram/current_user/', {
+      fetch('http://localhost:8000/api/v1/beergram/current_user/', {
         headers: {
           Authorization: `Token ${localStorage.getItem('token')}`
         }
@@ -44,7 +44,7 @@ refresh_user = () => {
 
 handle_login = (e, data) => {
   e.preventDefault();
-  fetch('http://localhost:8000/api/v1/instagram/auth/login/', {
+  fetch('http://localhost:8000/api/v1/beergram/auth/login/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -71,17 +71,19 @@ handle_logout = () => {
 };
 
 
+
 getHomeRoute = () =>{
   if (this.state.is_logged_in){
     if(!this.state.username){
       this.refresh_user()
     }
-    return  <Route exact path="/" component={Posts} />
+    return  <Route exact path="/" component={Posts}/>
   }
   return  <Route exact path="/" 
   render={(props) =>
   <Home {...props} handle_login={this.handle_login}/>}
   />
+ 
 
 };
 
@@ -102,11 +104,21 @@ getNotificationsRoute = () =>{
   />
 
 };
+renderUserProfile = (props) => {
+  return (
+    <UserProfile handle_logout={this.handle_logout}
+                 history={props.history}/>
+  )
+}
+
+
+
+
 
 getUploadRoute = () =>{
   if (this.state.is_logged_in){
     if(!this.state.username){
-      this.refresh_user()
+        this.refresh_user()
     }                                                                                             
     return  <Route  exact path="/upload" 
     render={(props) => <PostUpload {...props} username={this.state.username} 
@@ -132,7 +144,8 @@ getUploadRoute = () =>{
                     
                     {this.getNotificationsRoute()}
                     {this.getUploadRoute()}
-                    <Route  path="/users/:username" component={UserProfile} />
+                    <Route  path="/users/:username" render={this.renderUserProfile}
+                            />
                 </Switch>
             </BrowserRouter>
       </React.Fragment>

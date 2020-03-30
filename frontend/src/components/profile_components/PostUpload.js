@@ -51,7 +51,7 @@ class PostUpload extends React.Component{
 				image:e.target.files[0],
 				stage: "image",
 			});
-			//render the 
+		
 		}
 	}
 	
@@ -75,7 +75,7 @@ class PostUpload extends React.Component{
                 <input type="file" name="image" onChange= {this.onChange} />
 				</div> :
 				<div  className= "uploadImage upload " >
-                <img src={this.state.image_blob} className={this.state.image_filter} 
+                <img src="url" alt= {this.state.image_blob} className={this.state.image_filter} 
 				style={{height:'250px'}}/>
 				</div>}
 				<div className= "message caption-text">
@@ -85,12 +85,12 @@ class PostUpload extends React.Component{
 				 <div className="filters">
 				{ this.state.stage === "image" ?
 					<div>
-						<img src={this.state.image_blob}  className=" filter" onClick={(e) => this.selectFilter("")}/>
-						<img src={this.state.image_blob}  className=" filter blur-filter"  onClick={(e) => this.selectFilter("blur-filter")}/>
-						<img src={this.state.image_blob}  className=" filter bng-filter" onClick={(e) => this.selectFilter("bng-filter")}/>
-						<img src={this.state.image_blob}  className=" filter bright-filter"  onClick={(e) => this.selectFilter("bright-filter")}/>
-						<img src={this.state.image_blob}  className=" filter saturate-filter"  onClick={(e) => this.selectFilter("saturate-filter")}/>
-						<img src={this.state.image_blob}  className=" filter sepia-filter"  onClick={(e) => this.selectFilter("sepia-filter")}/>
+						<img alt='filter'src={this.state.image_blob}  className=" filter" onClick={(e) => this.selectFilter("")}/>
+						<img alt='filter'src={this.state.image_blob}  className=" filter blur-filter"  onClick={(e) => this.selectFilter("blur-filter")}/>
+						<img alt='filter'src={this.state.image_blob}  className=" filter bng-filter" onClick={(e) => this.selectFilter("bng-filter")}/>
+						<img alt='filter'src={this.state.image_blob}  className=" filter bright-filter"  onClick={(e) => this.selectFilter("bright-filter")}/>
+						<img alt='filter'src={this.state.image_blob}  className=" filter saturate-filter"  onClick={(e) => this.selectFilter("saturate-filter")}/>
+						<img alt='filter'src={this.state.image_blob}  className=" filter sepia-filter"  onClick={(e) => this.selectFilter("sepia-filter")}/>
 					</div>
 					: 
 					<div></div>}

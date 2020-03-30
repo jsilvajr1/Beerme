@@ -22,10 +22,10 @@ class UserProfile extends Component {
         
     }
     componentDidMount(){
-        //checks if user is logged in, and if true, checks if this is the correct profile
-        const { match: { params } } = this.props;
-       this.getUserProfile(params.username);
-      }
+    //     //checks if user is logged in, and if true, checks if this is the correct profile
+     const { match: { params } } = this.props;
+     this.getUserProfile(params.username);
+    }
       
       getUrl = (type,image) => {
           if (image){
@@ -42,6 +42,10 @@ class UserProfile extends Component {
         return await getCurrentUser();
         
     }
+    newMethod() {
+        return this.props;
+    }
+
     async getUserProfile(username) {
         if (!username){
             return ""
@@ -82,9 +86,9 @@ class UserProfile extends Component {
         
             <Row>
             <Col  md={{ size: 7, offset: 3 }} sm="12" >
-             <a>
+             <button>
              <Avatar name="Insta" size="45" round={true}  src={this.getUrl("/profile_pictures/", profile_picture)}/>
-            </a>
+             </button>
             <h3> {first_name} {' '} {last_name}</h3>
             <h6><b>@{username}</b></h6>
             <p>{bio}</p>

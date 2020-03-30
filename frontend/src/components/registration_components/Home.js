@@ -23,7 +23,7 @@ class Home extends React.Component{
 	render(){ 
 		return (
 		<Container style={{paddingTop: '10%', zIndex:'-1'}}>
-		<h1>Welcome to FakeGram!</h1>
+		<h1>Welcome to Beer ME!</h1>
 			<div style={{display:'flex', paddingRight:'12%'}}>
 				<div style={{flexGrow:'1'}}>
 				<form onSubmit={e => this.props.handle_login(e, this.state)}>
@@ -47,6 +47,7 @@ class Home extends React.Component{
         </button>
       </form>
 				</div>
+        <button onClick={this.handle_logout}>Logout</button>
 				<div style={{flexGrow:'1'}}>
 					Register
 				</div>
@@ -56,8 +57,8 @@ class Home extends React.Component{
 		
 	}
 }
-export default Home
 
+export default Home
 
 Home.propTypes = {
   handle_login: PropTypes.func.isRequired
