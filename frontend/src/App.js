@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Route, Switch, BrowserRouter} from 'react-router-dom';
-
+import './App.css';
 import Posts from './components/Posts';
 import TopNavBar from './components/TopNavBar';
 import UserProfile from './components/profile_components/UserProfile';
@@ -77,13 +77,12 @@ getHomeRoute = () =>{
     if(!this.state.username){
       this.refresh_user()
     }
-    return  <Route exact path="/" component={Posts}/>
+    return  <Route exact path="/" component={Posts} />
   }
   return  <Route exact path="/" 
   render={(props) =>
   <Home {...props} handle_login={this.handle_login}/>}
   />
- 
 
 };
 
@@ -104,26 +103,17 @@ getNotificationsRoute = () =>{
   />
 
 };
-renderUserProfile = (props) => {
-  return (
-    <UserProfile handle_logout={this.handle_logout}
-                 history={props.history}/>
-  )
-}
-
-
-
-
 
 getUploadRoute = () =>{
   if (this.state.is_logged_in){
     if(!this.state.username){
-        this.refresh_user()
+      this.refresh_user()
     }                                                                                             
     return  <Route  exact path="/upload" 
-    render={(props) => <PostUpload {...props} username={this.state.username} 
-    is_logged_in={this.state.is_logged_in}
-    user_id={this.state.user_id}/> }
+                    render={(props) =>
+                    <PostUpload {...props} username={this.state.username} 
+                    is_logged_in={this.state.is_logged_in}
+                    user_id={this.state.user_id}/> }
                      />
   }
   return  <Route exact path="/upload" 
@@ -144,8 +134,7 @@ getUploadRoute = () =>{
                     
                     {this.getNotificationsRoute()}
                     {this.getUploadRoute()}
-                    <Route  path="/users/:username" render={this.renderUserProfile}
-                            />
+                    <Route  path="/users/:username" component={UserProfile} />
                 </Switch>
             </BrowserRouter>
       </React.Fragment>

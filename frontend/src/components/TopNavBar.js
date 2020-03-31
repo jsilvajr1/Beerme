@@ -11,17 +11,20 @@ class TopNavBar extends React.Component {
             fontSize:'20px', 
             color:'blue', 
             fontWeight:'bold'
+            
+            
         }
     }
     navBarStyling = () => {
         return {
-        backgroundColor: 'grey', 
+        backgroundColor: 'white',
         position: 'fixed', 
-        width:'100%',
-        top: "20",
+        width:'70%',
+        top: '0',
         overflow:'auto',
-        zIndex:'3',
+        zIndex:'2',
         float: 'left'
+    
         
     }
     }
@@ -34,6 +37,7 @@ render(){
     this.props.refresh_user()
 }
     return( 
+
     <div >
     <Navbar light expand="md" style={this.navBarStyling()}>
       <NavbarBrand href="/" style={{flexGrow:'3'}}>

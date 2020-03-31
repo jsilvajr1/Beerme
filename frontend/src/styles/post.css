@@ -55,6 +55,7 @@ padding: 10px;
 .caption-text {
   height:"120px";
   width: "250px";
+  text-align: center;
 }
 
 .uploadIcon {

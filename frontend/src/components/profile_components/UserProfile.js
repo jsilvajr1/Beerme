@@ -6,6 +6,7 @@ import ListProfilePosts from './ListProfilePosts';
 import '../../styles/profile.css';
 
 
+
 class UserProfile extends Component {
     constructor(props){
         super(props);
@@ -19,13 +20,15 @@ class UserProfile extends Component {
         this.getProfilePosts = this.getProfilePosts.bind(this);
         this.getUserProfile = this.getUserProfile.bind(this);
         this.getUserPosts = this.getUserPosts.bind(this);
-        
+
     }
+    
+
     componentDidMount(){
-    //     //checks if user is logged in, and if true, checks if this is the correct profile
-     const { match: { params } } = this.props;
-     this.getUserProfile(params.username);
-    }
+        //check if a user is logged in, and if so is this their profile
+        const { match: { params } } = this.props;
+       this.getUserProfile(params.username);
+      }
       
       getUrl = (type,image) => {
           if (image){
@@ -42,10 +45,6 @@ class UserProfile extends Component {
         return await getCurrentUser();
         
     }
-    newMethod() {
-        return this.props;
-    }
-
     async getUserProfile(username) {
         if (!username){
             return ""
@@ -67,7 +66,7 @@ class UserProfile extends Component {
         }
 
     async getUserPosts(post_ids){
-            // checks user info loaded
+            // check that the user info loadede
             if (this.state.user_profile === []){
                 return "Loading......"
             }
@@ -86,9 +85,9 @@ class UserProfile extends Component {
         
             <Row>
             <Col  md={{ size: 7, offset: 3 }} sm="12" >
-             <button>
+            <button>
              <Avatar name="Insta" size="45" round={true}  src={this.getUrl("/profile_pictures/", profile_picture)}/>
-             </button>
+            </button>
             <h3> {first_name} {' '} {last_name}</h3>
             <h6><b>@{username}</b></h6>
             <p>{bio}</p>

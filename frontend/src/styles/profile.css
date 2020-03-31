@@ -2,6 +2,11 @@
   display: grid;                       /* establish flex container */
   grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
   grid-gap: 20px;
+  font-family: "Open Sans", Arial, sans-serif;
+  min-height: 100vh;
+  background-color: #fafafa;
+  color: #262626;
+  padding-bottom: 3rem;
 }
 .cell {
   flex: 0 0 33%;                       /* don't grow, don't shrink, width */
@@ -24,13 +29,14 @@ display: inline-block;
 border: 0px;
 border-bottom: 1px solid grey;
 box-sizing: border-box;
+text-align: center;
 }
 
 /* Set a style for all buttons */
 button {
-background-color: gold;
+background-color: rgb(255, 0, 64);
 color: white;
-padding: 14px 20px;
+padding: 14px 15px;
 margin: 8px 0;
 border: none;
 cursor: pointer;

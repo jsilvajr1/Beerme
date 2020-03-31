@@ -10,6 +10,13 @@ class Home extends React.Component{
     password: ''
   };
 
+  BackgroundImage = () => {
+    return (
+      <div className='bg'></div>
+    );
+  }
+
+
   handle_change = e => {
     const name = e.target.name;
     const value = e.target.value;
@@ -23,8 +30,8 @@ class Home extends React.Component{
 	render(){ 
 		return (
 		<Container style={{paddingTop: '10%', zIndex:'-1'}}>
-		<h1>Welcome to Beer ME!</h1>
-			<div style={{display:'flex', paddingRight:'12%'}}>
+		<h1>Welcome to beerMe!</h1>
+			<div style={{display:'flex', paddingRight:'20%'}}>
 				<div style={{flexGrow:'1'}}>
 				<form onSubmit={e => this.props.handle_login(e, this.state)}>
         <h4>Log In</h4>
@@ -47,9 +54,8 @@ class Home extends React.Component{
         </button>
       </form>
 				</div>
-        <button onClick={this.handle_logout}>Logout</button>
-				<div style={{flexGrow:'1'}}>
-					Register
+				<div align='center'style={{flexGrow:'1'}}>
+					
 				</div>
 			</div>
 		</Container>
@@ -57,8 +63,8 @@ class Home extends React.Component{
 		
 	}
 }
-
 export default Home
+
 
 Home.propTypes = {
   handle_login: PropTypes.func.isRequired
