@@ -20,6 +20,18 @@ class PostCreateView(generics.ListCreateAPIView):
 	permission_classes = (IsAuthenticated,)
 	queryset = models.Post.objects.all().order_by('-created_at', '-updated_at')
 	serializer_class = serializers.PostSerializer
+
+class PostDeleteView(generics.RetrieveDestroyAPIView):
+    permission_classes = (IsAuthenticated,)
+    queryset = models.Post.objects.all()
+    serializers = serializers.PostSerializer
+
+class PostEditView(generics.RetrieveUpdateAPIView):
+    permission_classes = (IsAuthenticated,)
+    queryset = models.Post.objects.all()
+    serializers = serializers.PostSerializer
+
+    
   
 
 class PostUpdateView(generics.RetrieveUpdateDestroyAPIView):

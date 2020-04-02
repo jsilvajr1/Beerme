@@ -21,7 +21,15 @@ class UserProfile extends Component {
         this.getUserProfile = this.getUserProfile.bind(this);
         this.getUserPosts = this.getUserPosts.bind(this);
 
+        
+
     }
+
+    BackgroundImage = () => {
+        return (
+          <div className='user_profile'></div>
+        );
+      }
     
 
     componentDidMount(){
@@ -81,20 +89,21 @@ class UserProfile extends Component {
         return (
             <div>
            {this.state.user_exists ?     
-        <Container style={{paddingTop: '10%', zIndex:'-1'}}>
+        <Container style={{fontSize:'50',paddingTop: '10%', zIndex:'-1'}}>
         
             <Row>
             <Col  md={{ size: 7, offset: 3 }} sm="12" >
             <button>
              <Avatar name="Insta" size="45" round={true}  src={this.getUrl("/profile_pictures/", profile_picture)}/>
             </button>
+
             <h3> {first_name} {' '} {last_name}</h3>
             <h6><b>@{username}</b></h6>
             <p>{bio}</p>
             </Col>
             </Row>
             { this.state.user_posts.length>0  ?
-            <Col  md={{ size: 10, offset: 1 }} className="profile_grid" style={{ paddingBottom:'15px'}}>
+            <Col  md={{ size: 10, offset: 1 }} className="profile_grid" style={{ paddingBottom:'10px'}}>
                   <ListProfilePosts posts={this.state.user_posts} 
                   user = {this.state.user_profile}
 

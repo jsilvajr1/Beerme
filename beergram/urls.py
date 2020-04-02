@@ -9,6 +9,7 @@ urlpatterns = [
 	path('posts/create/', views.PostCreateView.as_view()),
 	path('posts/<int:pk>/', views.PostDetailView.as_view()),  
 	path('posts/<int:pk>/edit/', views.PostUpdateView.as_view()),
+	path('posts/<int:pk>/delete/', views.PostDeleteView.as_view()),
 	
 	# user urls
 	path('users/', views.UserListView.as_view()),

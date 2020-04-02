@@ -46,7 +46,7 @@ class ListProfilePosts extends React.Component{
 		<div className="cell" key={post.id}>
             <Media src={this.getUrl("/post_pictures/",post.image)}  className={post.image_filter}
             onClick={() => this.setState({ modalShow: [true, post.id]})}
-            style={{width:'100%', height:'180px', border: '2px solid black'}}/>
+            style={{width:'100%', height:'150px', border:'2px solid black' }}/>
 
             {this.renderModal(post)}
         </div>  

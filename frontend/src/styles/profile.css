@@ -1,10 +1,11 @@
 .profile_grid {
   display: grid;                       /* establish flex container */
-  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+  grid-row:auto;
   font-family: "Open Sans", Arial, sans-serif;
   min-height: 100vh;
-  background-color: #fafafa;
+  background-color: #242323;
   color: #262626;
   padding-bottom: 3rem;
 }
@@ -34,18 +35,20 @@ text-align: center;
 
 /* Set a style for all buttons */
 button {
-background-color: rgb(255, 0, 64);
+background-color: rgb(63, 97, 248);
 color: white;
 padding: 14px 15px;
-margin: 8px 0;
-border: none;
+margin: 5px 0;
+border: round;
+border-color: black;
+border-collapse: collapse;
 cursor: pointer;
-width: 50%;
-border-radius: 15px;
+width: 15%;
+border-radius: 10px;
 }
 
 button:hover {
-opacity: 0.8;
+opacity: 0.5;
 }
 
 /* Extra styles for the cancel button */

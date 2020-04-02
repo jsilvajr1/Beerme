@@ -43,7 +43,7 @@ class PostItem extends Component {
                 </button>
                 <Col style={{width:'100%', padding:'0px'}}>
                 <Media src={this.getUrl("/post_pictures/",image)} 
-                style={{width:'100%',padding:"0px"}}
+                style={{width:'250px',padding:"0px"}}
                 className={image_filter}/>
                 </Col>
         <p> <b><a href={this.getUserUrl(user.username)}>{user.username}</a></b> {' '} {caption}</p>

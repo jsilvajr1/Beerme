@@ -39,7 +39,7 @@ refresh_user = () => {
           console.log("refreshing user info.....", this.state.username);
           }
         });
-}
+  }
 }
 
 handle_login = (e, data) => {
@@ -126,7 +126,7 @@ getUploadRoute = () =>{
     return (
       <React.Fragment >
        <TopNavBar is_logged_in = {this.state.is_logged_in} username={this.state.username} 
-       refresh_user={this.refresh_user}/>
+       refresh_user={this.refresh_user} handle_logout={this.handle_logout}/>
 
       <BrowserRouter style={{backgroundColor:'#f8f9fa', paddingTop: '10%'}}>
                 <Switch>

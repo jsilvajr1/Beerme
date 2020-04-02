@@ -9,6 +9,14 @@
   
 }
 
+/* .user_profile {
+background-image: url("https://image.freepik.com/free-photo/old-gray-cement-wall-backgrounds_34552-324.jpg")!important;
+height: 100vh;
+background-position: center !important ;
+background-repeat: no-repeat;
+background-size: cover; */
+/* } */
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -30,14 +38,14 @@
   color: #61dafb;
   
 }
-
+/* 
 .bg {
-background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+background-image: url("https://image.freepik.com/free-photo/old-gray-cement-wall-backgrounds_34552-324.jpg");
 height: 100vh;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-}
+} */
 
 .hangle_change {
 text-align: center;

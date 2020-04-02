@@ -34,7 +34,7 @@ getUrl = (type,image) => {
       <Modal isOpen={this.state.modal} toggle={this.toggle} style={{width: '70%'}}>
       <div className="modal_flex">
         <div style={{width:'60%'}}>
-      <Media src={this.props.image}style={{width:'100%', height:'100%'}} 
+      <Media src={this.props.image}style={{width:'250px', height:'250px', }} 
       className={this.props.image_filter}></Media>
       </div>
       <div style={{width:'40%'}}>

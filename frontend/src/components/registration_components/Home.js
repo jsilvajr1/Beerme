@@ -10,11 +10,11 @@ class Home extends React.Component{
     password: ''
   };
 
-  BackgroundImage = () => {
-    return (
-      <div className='bg'></div>
-    );
-  }
+  // BackgroundImage = () => {
+  //   return (
+  //     <div className='bg'></div>
+  //   );
+  // }
 
 
   handle_change = e => {
@@ -54,9 +54,8 @@ class Home extends React.Component{
         </button>
       </form>
 				</div>
-				<div align='center'style={{flexGrow:'1'}}>
-					
-				</div>
+
+		
 			</div>
 		</Container>
 		)

@@ -40,16 +40,17 @@ grid-template-areas:
 'heading heading heading heading heading'
 'upload upload uplaod message message'
 'filters filters filters filters filters '
-'submit submit submit submit submit';
-grid-gap: 5px;
 
-padding: 10px;
+'submit submit submit submit submit';
+grid-gap: 10px;
+
+padding: 2px;
 }
 
 .grid-container > div {
   text-align: center;
-  padding: 5px 0;
-  font-size: 30px;
+  padding: 6px 0;
+  font-size: 50px;
 }
 
 .caption-text {
